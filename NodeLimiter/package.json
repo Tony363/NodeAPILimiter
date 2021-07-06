@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "deta": "^0.0.12",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0"
+  }
+}
