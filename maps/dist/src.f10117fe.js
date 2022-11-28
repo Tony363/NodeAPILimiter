@@ -136895,6 +136895,10 @@ var User = function () {
     };
   }
 
+  User.prototype.markerContent = function () {
+    return "User Name: " + this.name;
+  };
+
   return User;
 }();
 
@@ -136925,6 +136929,10 @@ var Company = function () {
       lng: parseFloat(faker_1.default.address.longitude())
     };
   }
+
+  Company.prototype.markerContent = function () {
+    return "\n        <div>\n            <h1>Company Name: " + this.company + "</h1>\n            <h3>Catchphrase: " + this.catchPhrase + "</h3>\n        </div>\n        ";
+  };
 
   return Company;
 }();
@@ -136963,7 +136971,7 @@ var CustomMap = function () {
     });
     mark.addListener('click', function () {
       var infoWindow = new google.maps.InfoWindow({
-        content: 'Hi there!'
+        content: marker.markerContent()
       });
       infoWindow.open(_this.googleMap, mark);
     });
@@ -137019,7 +137027,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45003" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36563" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

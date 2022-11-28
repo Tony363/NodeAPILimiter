@@ -9,7 +9,8 @@ const profile = {
         this.age=age;
     }
 };
-const {age}:{age:number}=profile;
+// wtf , javascript likes ignoring errors
+const {age,name}:{age:number;name:string}=profile;
 const{
     coords:{lat,lng}
 }:{coords:{lat:number,lng:number}} = profile;

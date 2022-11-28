@@ -1,8 +1,10 @@
 import faker from 'faker';
+import {Mappable} from './CustomMap';
 
-export class Company{
+export class Company implements Mappable{
     company:string;
     catchPhrase:string;
+    color:string = 'red';
     location:{
         lat:number;
         lng:number;
@@ -16,6 +18,11 @@ export class Company{
         }
     }
     markerContent():string{
-        return 'User Name: ${this.name}';
+        return `
+        <div>
+            <h1>Company Name: ${this.company}</h1>
+            <h3>Catchphrase: ${this.catchPhrase}</h3>
+        </div>
+        `;
     }
 }
